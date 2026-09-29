@@ -8,3 +8,8 @@ def remember(key, value, store=[]):
     store.append((key, value))
     _CACHE[key] = value
     return store
+
+
+def lookup(key):
+    # Seeded bug 6: KeyError on a missing key.
+    return _CACHE[key]
