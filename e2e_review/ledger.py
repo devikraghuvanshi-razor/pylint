@@ -19,3 +19,8 @@ def run_report(name):
 
     # Seeded bug 3: shell injection through an unescaped argument.
     return subprocess.run(f"generate-report {name}", shell=True, check=True)
+
+
+def parse_port(text):
+    # Seeded bug 4: int() raises on non-numeric input and nothing checks the range.
+    return int(text)
