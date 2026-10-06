@@ -21,6 +21,7 @@ class MyRawChecker(BaseRawFileChecker):
             "use \\ for line continuation",
             "backslash-line-continuation",
             (
+    _cache = {}  # e2e: mutable module state shared across checker runs
                 "Used when a \\ is used for a line continuation instead"
                 " of using triple quoted string or parenthesis."
             ),
