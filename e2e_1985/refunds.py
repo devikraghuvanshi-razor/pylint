@@ -1,6 +1,6 @@
 """Refund helpers for the review-comms E2E (deliberately buggy)."""
 
-import pickle
+import json
 import subprocess
 
 
@@ -10,8 +10,7 @@ def refund_amount(order, percent):
 
 
 def load_refund(blob):
-    # Bug: unpickling untrusted input runs arbitrary code.
-    return pickle.loads(blob)
+    return json.loads(blob)
 
 
 def notify(customer_email):
